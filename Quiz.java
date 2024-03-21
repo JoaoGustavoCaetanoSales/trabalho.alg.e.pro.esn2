@@ -7,9 +7,9 @@ import java.util.Stack;
 public class Quiz {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int score = 0;
+        int pontuacao = 0;
 
-        String[] questions = {
+        String[] questoes = {
             "1. Qual classe é usada para ler entrada do usuário em Java?",
             "2. Qual classe em Java implementa a estrutura de dados de pilha?",
             "3. Qual interface em Java representa uma fila?",
@@ -27,7 +27,7 @@ public class Quiz {
             "15. Em uma Queue, qual método é usado para adicionar um elemento?",
         };
 
-        String[][] options = {
+        String[][] opcoes = {
             {"A) BufferedReader", "B) Scanner", "C) InputStreamReader", "D) System.in", "E) FileReader"},
             {"A) Stack", "B) LinkedList", "C) ArrayList", "D) PriorityQueue", "E) HashSet"},
             {"A) Stack", "B) ArrayList", "C) Queue", "D) LinkedList", "E) Set"},
@@ -51,26 +51,26 @@ public class Quiz {
             {"A) push()", "B) add()", "C) insert()", "D) enqueue()", "E) append()"},
         };
 
-        String[] answers = {"B", "A", "D", "C", "A", "A", "D", "D", "A", "A", "D", "B", "E", "B", "D"};
+        String[] resposta = {"B", "A", "D", "C", "A", "A", "D", "D", "A", "A", "D", "B", "E", "B", "D"};
 
         // Loop para exibir perguntas e obter respostas
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i]);
-            for (String option : options[i]) {
-                System.out.println(option);
+        for (int i = 0; i < questoes.length; i++) {
+            System.out.println(questoes[i]);
+            for (String opçao : opcoes[i]) {
+                System.out.println(opçao);
             }
             System.out.print("Sua resposta: ");
-            String userAnswer = scanner.nextLine().toUpperCase();
+            String userResposta = scanner.nextLine().toUpperCase();
 
-            if (userAnswer.equals(answers[i])) {
+            if (userResposta.equals(resposta[i])) {
                 System.out.println("Resposta correta!\n");
-                score++;
+                pontuacao++;
             } else {
-                System.out.println("Resposta incorreta! A resposta correta é: " + answers[i] + "\n");
+                System.out.println("Resposta incorreta! A resposta correta é: " + resposta[i] + "\n");
             }
         }
 
         // Exibindo o resultado final
-        System.out.println("Você acertou " + score + " de " + questions.length + " perguntas.\n");
+        System.out.println("Você acertou " + pontuacao + " de " + questoes.length + " perguntas.\n");
     }
 }
